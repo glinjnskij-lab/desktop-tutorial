@@ -1,5 +1,84 @@
-# Welcome to GitHub Desktop!
+# Conference Booking
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+Вебпроєкт для бронювання конференц-залів.
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
+## Опис проєкту
+
+Conference Booking — це вебсистема, призначена для перегляду конференц-залів та створення бронювання.
+
+Користувач може переглянути доступні зали, ознайомитися з їх характеристиками, обладнанням та створити заявку на бронювання.
+
+## Предметна область
+
+Предметна область проєкту — бронювання конференц-залів.
+
+Система повинна забезпечувати:
+
+- перегляд доступних конференц-залів;
+- перегляд інформації про зал;
+- перегляд обладнання;
+- вибір дати бронювання;
+- вибір часу;
+- введення контактних даних;
+- перевірку введених даних;
+- створення бронювання.
+
+## Основні сутності
+
+### Room
+
+Конференц-зал.
+
+Поля:
+
+- `id`
+- `name`
+- `capacity`
+- `location`
+- `description`
+- `price`
+
+### Booking
+
+Бронювання.
+
+Поля:
+
+- `id`
+- `room_id`
+- `user_id`
+- `date`
+- `start_time`
+- `end_time`
+- `status`
+
+### User
+
+Користувач.
+
+Поля:
+
+- `id`
+- `name`
+- `email`
+- `phone`
+
+### Equipment
+
+Обладнання.
+
+Поля:
+
+- `id`
+- `room_id`
+- `name`
+- `quantity`
+
+## Зв'язки
+
+```text
+User 1 ───── ∞ Booking
+
+Room 1 ───── ∞ Booking
+
+Room 1 ───── ∞ Equipment
